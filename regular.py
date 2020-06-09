@@ -161,18 +161,28 @@ reobj = re.compile('.{1,3}at')  # ('.{1,3}at')
 
 print(reobj.search(st))
 
-'''
 
-a = int(input("Enter any mobile number:"))
-m=re.compile("(0/9)?[7-9]\d{9}")
-if m!=None:
-    print("Entered mobile number is valid:",a)
-else:
-    print("Entered mobile number is not valid:",a)
+
+
 
 a=input("Enter any email id:")
-m=re.compile('[a-zA-Z-0-9-]@(gmial,yahoo,outlook)[.]com')
+m=re.fullmatch('[a-zA-Z-0-9-]@(gmial,yahoo,outlook)[.]com',a)
 if m!=None:
     print("Entered email id is valid:",a)
 else:
     print("Entered email id not valid:")
+
+a=input("Enter any vehicle number:")
+m=re.fullmatch('[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{4}',a)
+if m!=None:
+    print("Entered vehicle number is valid:",a)
+else:
+    print("Entered vehicle number is not valid:",a)
+'''
+
+a = input("Enter any mobile number:")
+m=re.fullmatch('(0|91)?[6-9][0-9]{9}',a)
+if m!=None:
+    print("Entered mobile number is valid:",a)
+else:
+    print("Entered mobile number is not valid:",a)
